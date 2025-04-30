@@ -1,0 +1,61 @@
+/* src/components/shared/Card/Card.module.css */
+.card {
+    background: var(--white);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    transition: all var(--transition-normal);
+    height: 100%;
+  }
+  
+  /* Card variants */
+  .default {
+    box-shadow: var(--shadow-md);
+  }
+  
+  .flat {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .glass {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  
+  .dark {
+    background: var(--dark);
+    color: var(--white);
+  }
+  
+  .gradient {
+    background: var(--gradient-primary);
+    color: var(--white);
+  }
+  
+  .interactive {
+    cursor: pointer;
+  }
+  
+  /* Hover effects */
+  .hover:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  /* Card inner components */
+  .header {
+    padding: var(--space-md);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .content {
+    padding: var(--space-md);
+  }
+  
+  .footer {
+    padding: var(--space-md);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }

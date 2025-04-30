@@ -1,0 +1,145 @@
+/* src/components/shared/Button/Button.module.css */
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    white-space: nowrap;
+    border-radius: var(--border-radius-full);
+    font-weight: 600;
+    transition: all var(--transition-normal);
+    overflow: hidden;
+    cursor: pointer;
+    outline: none;
+    text-align: center;
+  }
+  
+  /* Button variants */
+  .primary {
+    background: var(--gradient-primary);
+    color: var(--white);
+    box-shadow: 0 4px 14px 0 rgba(0, 118, 255, 0.39);
+  }
+  
+  .primary:hover {
+    box-shadow: 0 6px 20px rgba(0, 118, 255, 0.5);
+    transform: translateY(-2px);
+  }
+  
+  .secondary {
+    background: var(--gradient-accent);
+    color: var(--white);
+    box-shadow: 0 4px 14px 0 rgba(0, 240, 255, 0.39);
+  }
+  
+  .secondary:hover {
+    box-shadow: 0 6px 20px rgba(0, 240, 255, 0.5);
+    transform: translateY(-2px);
+  }
+  
+  .outline {
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+  }
+  
+  .outline:hover {
+    background: rgba(0, 102, 255, 0.1);
+    transform: translateY(-2px);
+  }
+  
+  .ghost {
+    background: transparent;
+    color: var(--primary);
+  }
+  
+  .ghost:hover {
+    background: rgba(0, 102, 255, 0.1);
+  }
+  
+  .light {
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--white);
+    backdrop-filter: blur(8px);
+  }
+  
+  .light:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+  }
+  
+  .dark {
+    background: var(--dark);
+    color: var(--white);
+  }
+  
+  .dark:hover {
+    background: var(--dark-gray);
+    transform: translateY(-2px);
+  }
+  
+  /* Button sizes */
+  .small {
+    padding: 6px 16px;
+    font-size: var(--font-size-sm);
+    height: 32px;
+  }
+  
+  .medium {
+    padding: 10px 24px;
+    font-size: var(--font-size-base);
+    height: 40px;
+  }
+  
+  .large {
+    padding: 12px 32px;
+    font-size: var(--font-size-md);
+    height: 48px;
+  }
+  
+  /* Icon positioning */
+  .iconLeft {
+    margin-right: 8px;
+    display: inline-flex;
+  }
+  
+  .iconRight {
+    margin-left: 8px;
+    display: inline-flex;
+  }
+  
+  /* Full width button */
+  .fullWidth {
+    width: 100%;
+  }
+  
+  /* Disabled state */
+  .disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  .disabled:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  
+  /* Button with background shine effect */
+  .primary::after,
+  .secondary::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    bottom: -50%;
+    left: -50%;
+    background: linear-gradient(to bottom, rgba(229, 172, 142, 0), rgba(255, 255, 255, 0.5) 50%, rgba(229, 172, 142, 0));
+    transform: rotate(25deg) translate(-100%, -25%);
+    opacity: 0.3;
+    transition: transform 0.7s;
+  }
+  
+  .primary:hover::after,
+  .secondary:hover::after {
+    transform: rotate(25deg) translate(100%, -25%);
+  }

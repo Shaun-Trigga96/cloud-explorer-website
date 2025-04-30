@@ -1,0 +1,108 @@
+/* c:\Users\thabi\Desktop\cloud-explorer-website\src\components\Header\Header.module.css */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 0;
+  background-color: transparent; /* Or your default background */
+  z-index: 1000;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  /* Add other base header styles */
+}
+
+.header.scrolled {
+  background-color: #ffffff; /* Example scrolled background */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  /* If you use a global container class, you might not need this.
+     If the header needs specific container adjustments, add them here. */
+  max-width: 1200px; /* Example */
+  margin: 0 auto;
+  padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit; /* Or your specific logo text color */
+}
+
+.logo img {
+  height: 40px; /* Adjust as needed */
+  margin-right: 10px;
+}
+
+.logo span {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navigation {
+  /* Styles for your navigation links container */
+}
+
+.navigation ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.navigation li {
+  margin-left: 20px; /* Adjust spacing */
+}
+
+.navigation a {
+  text-decoration: none;
+  color: #333; /* Adjust link color */
+  transition: color 0.3s ease;
+}
+
+.navigation a:hover,
+.navigation a:focus {
+  color: #007bff; /* Example hover color */
+}
+
+.downloadBtn {
+  background-color: #007bff; /* Example button style */
+  color: white;
+  padding: 8px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.downloadBtn:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+.mobileMenuBtn {
+  /* Styles for your mobile menu button (hamburger icon) */
+  display: none; /* Hide on desktop by default */
+  cursor: pointer;
+  /* Add burger icon styles */
+}
+
+/* Add media queries for mobile navigation (.open class, .mobileMenuBtn display) */
+@media (max-width: 768px) {
+  .navigation {
+    /* Styles for mobile menu (e.g., position absolute, hidden by default) */
+  }
+
+  .navigation.open {
+    /* Styles for when the mobile menu is visible */
+  }
+
+  .mobileMenuBtn {
+    display: block; /* Show on mobile */
+  }
+}

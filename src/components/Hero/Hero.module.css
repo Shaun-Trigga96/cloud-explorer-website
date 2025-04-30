@@ -1,0 +1,136 @@
+/* c:\Users\thabi\Desktop\cloud-explorer-website\src\components\Hero\Hero.module.css */
+
+.hero {
+  background: linear-gradient(135deg, #6e8efb, #a777e3); /* Example gradient */
+  color: white;
+  padding: 100px 0 150px; /* Adjust padding, leave space for wave */
+  position: relative;
+  overflow: hidden; /* Hide overflowing wave */
+  text-align: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative; /* Ensure content is above wave */
+  z-index: 2;
+}
+
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    text-align: left;
+    justify-content: space-between;
+  }
+}
+
+.heroContent {
+  max-width: 600px;
+  margin-bottom: 40px;
+}
+
+@media (min-width: 768px) {
+  .heroContent {
+    margin-bottom: 0;
+    margin-right: 40px; /* Space between text and image */
+  }
+}
+
+.heroContent h1 {
+  font-size: 2.5rem; /* Example size */
+  margin-bottom: 15px;
+}
+
+.heroContent p {
+  font-size: 1.1rem; /* Example size */
+  margin-bottom: 30px;
+}
+
+.heroButtons {
+  display: flex;
+  gap: 15px; /* Space between buttons */
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .heroButtons {
+    justify-content: flex-start;
+  }
+}
+
+/* Base button styles - you might move these to a shared button component later */
+.btn {
+  padding: 12px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  display: inline-block;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.primaryBtn {
+  background-color: #ffffff;
+  color: #6e8efb; /* Match gradient start */
+}
+
+.primaryBtn:hover {
+  background-color: #f0f0f0;
+}
+
+.secondaryBtn {
+  background-color: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+
+.secondaryBtn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.heroImage {
+  max-width: 500px; /* Adjust as needed */
+  width: 80%; /* Responsive width */
+}
+
+@media (min-width: 768px) {
+  .heroImage {
+    width: auto; /* Let max-width control it */
+  }
+}
+
+.heroImage img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px; /* Optional: rounded corners */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Optional: shadow */
+}
+
+.waveDivider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg); /* Flip the SVG if needed */
+  z-index: 1;
+}
+
+.waveDivider svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px); /* SVG scaling adjustments */
+  height: 100px; /* Adjust height of the wave */
+}
+
+.waveDivider path {
+  fill: #ffffff; /* Color of the section below the wave */
+}

@@ -1,38 +1,39 @@
 import React, { useState } from 'react';
-import appArchitectureImage from './assets/images/CloudExplorer-App-Architecture.svg';
-import cloudArchitectureImage from './assets/images/CloudExplorer-Cloud-Architecture.svg';
+import appArchitectureImage from '../../assets/images/CloudExplorer-App-Architecture.svg'; // Corrected path
+import cloudArchitectureImage from '../../assets/images/CloudExplorer-Cloud-Architecture.svg'; // Corrected path
+import styles from './Architecture.module.css'; // Import the CSS module
 
 function Architecture() {
   const [activeTab, setActiveTab] = useState('app');
 
   return (
-    <section id="architecture" className="architecture">
-      <div className="container">
-        <div className="section-header">
+    <section id="architecture" className={styles.architecture}>
+      <div className={styles.container}> {/* Or use global container */}
+        <div className={styles.sectionHeader}>
           <h2>System Architecture</h2>
           <p>Built with modern technologies for optimal performance and security</p>
         </div>
-        <div className="architecture-tabs">
-          <div className="tab-buttons">
+        <div className={styles.architectureTabs}>
+          <div className={styles.tabButtons}>
             <button
-              className={activeTab === 'app' ? 'active' : ''}
+              className={`${styles.tabButton} ${activeTab === 'app' ? styles.active : ''}`}
               onClick={() => setActiveTab('app')}
             >
               Application Architecture
             </button>
             <button
-              className={activeTab === 'cloud' ? 'active' : ''}
+              className={`${styles.tabButton} ${activeTab === 'cloud' ? styles.active : ''}`}
               onClick={() => setActiveTab('cloud')}
             >
               Cloud Architecture
             </button>
           </div>
-          <div className="architecture-content">
-            <div className="architecture-image">
+          <div className={styles.architectureContent}>
+            <div className={styles.architectureImage}>
               {activeTab === 'app' && <img src={appArchitectureImage} alt="Application Architecture" />}
               {activeTab === 'cloud' && <img src={cloudArchitectureImage} alt="Cloud Architecture" />}
             </div>
-            <div className="architecture-details">
+            <div className={styles.architectureDetails}>
               {activeTab === 'app' && (
                 <h3>Application Components</h3>
               )}

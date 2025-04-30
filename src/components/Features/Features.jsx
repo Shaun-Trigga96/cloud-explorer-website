@@ -1,6 +1,7 @@
 // components/Features.jsx
 import React from 'react';
 import { FaLightbulb, FaQuestionCircle, FaCertificate, FaChartLine, FaRobot, FaShieldAlt } from 'react-icons/fa'; // Import icons from react-icons/fa
+import styles from './Features.module.css'; // Import the CSS module
 
 function Features() {
   const features = [
@@ -37,16 +38,16 @@ function Features() {
   ];
 
   return (
-    <section id="features" className="features">
-      <div className="container">
-        <div className="section-header">
+    <section id="features" className={styles.features}>
+      <div className={styles.container}> {/* Or use a global container class */}
+        <div className={styles.sectionHeader}>
           <h2>Why Choose Cloud Explorer?</h2>
           <p>Our app offers a comprehensive learning experience for Google Cloud Platform</p>
         </div>
-        <div className="features-grid">
+        <div className={styles.featuresGrid}>
           {features.map((feature, index) => (
-            <div className="feature-card" key={index}>
-              <div className="feature-icon">
+            <div className={styles.featureCard} key={index}>
+              <div className={styles.featureIcon}>
                 <feature.icon /> {/* Render the imported React Icon component */}
               </div>
               <h3>{feature.title}</h3>

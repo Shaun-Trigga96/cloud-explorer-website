@@ -1,21 +1,22 @@
 // components/Footer.jsx
 import React from 'react';
 import { FaGithub, FaTwitter, FaLinkedin } from 'react-icons/fa'; // Import icons
-import logo from './assets/images/cloud_explorer.png'; // Import the logo
 import { Link } from 'react-router-dom';
+import footerLogo from '../../assets/images/cloud_explorer.png'; // Corrected logo path
+import styles from './Footer.module.css'; // Import the CSS module
 
 function Footer() {
   return (
-    <footer className="footer">
-      <div className="container">
-        <div className="footer-content">
-          <div className="footer-logo">
-            <img src={logo} alt="Cloud Explorer" /> {/* Use the imported logo */}
+    <footer className={styles.footer}>
+    <div className={styles.container}> {/* Assuming a global or footer-specific container style */}
+      <div className={styles.footerContent}>
+        <div className={styles.footerLogo}>
+            <img src={footerLogo} alt="Cloud Explorer" />
             <h3>Cloud Explorer</h3>
-            <p>Master Google Cloud Platform with ease</p>
+            <p>Master GCP, AWS & Azure with ease</p>
           </div>
-          <div className="footer-links">
-            <div className="link-group">
+          <div className={styles.footerLinks}>
+            <div className={styles.linkGroup}>
               <h4>App</h4>
               <ul>
                 <li><a href="#features">Features</a></li>
@@ -23,18 +24,18 @@ function Footer() {
                 <li><a href="#screenshots">Screenshots</a></li>
               </ul>
             </div>
-            <div className="link-group">
+            <div className={styles.linkGroup}>
               <h4>Resources</h4>
               <ul>
-                <li><a href="#download">Download</a></li>
-                <li><a href="#documentation">Documentation</a></li>
+              <li><a href="#download" className={styles.downloadBtn}>Download</a></li> {/* Assuming a downloadBtn style exists */}
+              <li><a href="#documentation">Documentation</a></li>
                 <li><a href="#contribute">Contribute</a></li>
                 <li><Link to="/privacy-policy">Privacy Policy</Link></li>
               </ul>
             </div>
-            <div className="link-group">
+            <div className={styles.linkGroup}> {/* Use styles object */}
               <h4>Connect</h4>
-              <ul className="social-links">
+              <ul className={styles.socialLinks}> {/* Use styles object */}
                 <li>
                   <a href="#github">
                     <FaGithub /> {/* GitHub icon */}
@@ -57,7 +58,7 @@ function Footer() {
             </div>
           </div>
         </div>
-        <div className="footer-bottom">
+        <div className={styles.footerBottom}>
           <p>&copy; {new Date().getFullYear()} Cloud Explorer. All rights reserved.</p>
           <p>Built with React. Licensed under MIT.</p>
         </div>

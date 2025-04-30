@@ -1,7 +1,8 @@
 // components/Header.jsx
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'; // Import Link
-import logo from './assets/images/cloud_explorer.png'; // Import the logo
+import logo from '../../assets/images/cloud_explorer.png'; // Corrected logo import path
+import styles from './Header.module.css'; // Import the CSS Module
 
 function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -23,20 +24,20 @@ function Header() {
   }, []);
 
   return (
-    <header className={`header ${scrolled ? 'scrolled' : ''}`}>
-      <div className="container">
-        <Link to="/" className="logo"> {/* Make the logo a link */}
+    <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
+      <div className={styles.container}> {/* Assuming you might want a container style specific to header */}
+        <Link to="/" className={styles.logo}> {/* Make the logo a link */}
           <img src={logo} alt="Cloud Explorer" />
           <span>Cloud Explorer</span>
         </Link>
-        <nav className={`navigation ${menuOpen ? 'open' : ''}`}>
+        <nav className={`${styles.navigation} ${menuOpen ? styles.open : ''}`}>
           <ul>
             <li><Link to="/">Home</Link></li>
             <li><a href="#features">Features</a></li>
             <li><a href="#architecture">Architecture</a></li>
             <li><a href="#screenshots">Screenshots</a></li>
             <li><Link to="/privacy-policy">Privacy Policy</Link></li>
-            <li><a href="#download" className="download-btn">Download App</a></li>
+            <li><a href="#download" className={styles.downloadBtn}>Download App</a></li>
           </ul>
         </nav>
         <div className="mobile-menu-btn" onClick={() => setMenuOpen(!menuOpen)}>

@@ -1,0 +1,80 @@
+/* src/styles/variables.css */
+:root {
+    /* Color Palette - Futuristic, Modern */
+    --primary: #0066FF;
+    --primary-dark: #0047B3;
+    --primary-light: #4D94FF;
+    --secondary: #6E00FF;
+    --secondary-dark: #4C00B3;
+    --secondary-light: #9C4DFF;
+    --accent: #00E5FF;
+    --accent-dark: #00B3CC;
+    --accent-light: #99F8FF;
+    
+    /* Neutrals */
+    --dark: #0A1128;
+    --dark-gray: #232f3e;
+    --medium-gray: #4A5568;
+    --light-gray: #A0AEC0;
+    --off-white: #F7FAFC;
+    --white: #FFFFFF;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, var(--primary), var(--secondary));
+    --gradient-accent: linear-gradient(135deg, var(--accent), var(--primary-light));
+    
+    /* Design System */
+    --space-xxs: 0.25rem;  /* 4px */
+    --space-xs: 0.5rem;    /* 8px */
+    --space-sm: 1rem;      /* 16px */
+    --space-md: 1.5rem;    /* 24px */
+    --space-lg: 2rem;      /* 32px */
+    --space-xl: 3rem;      /* 48px */
+    --space-xxl: 4rem;     /* 64px */
+    
+    /* Typography */
+    --font-family: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-size-xs: 0.75rem;   /* 12px */
+    --font-size-sm: 0.875rem;  /* 14px */
+    --font-size-base: 1rem;    /* 16px */ 
+    --font-size-md: 1.125rem;  /* 18px */
+    --font-size-lg: 1.25rem;   /* 20px */
+    --font-size-xl: 1.5rem;    /* 24px */
+    --font-size-2xl: 2rem;     /* 32px */
+    --font-size-3xl: 2.5rem;   /* 40px */
+    --font-size-4xl: 3rem;     /* 48px */
+    
+    /* Effects */
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 16px;
+    --border-radius-xl: 24px;
+    --border-radius-full: 9999px;
+    
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.06);
+    --shadow-lg: 0 10px 15px rgba(0,0,0,0.1), 0 4px 6px rgba(0,0,0,0.05);
+    --shadow-xl: 0 20px 25px rgba(0,0,0,0.1), 0 10px 10px rgba(0,0,0,0.04);
+    
+    /* Animations */
+    --transition-fast: 150ms ease;
+    --transition-normal: 300ms ease;
+    --transition-slow: 500ms ease;
+    
+    /* Z-index layers */
+    --z-negative: -1;
+    --z-base: 0;
+    --z-above: 10;
+    --z-dropdown: 100;
+    --z-sticky: 200;
+    --z-drawer: 300;
+    --z-modal: 400;
+    --z-popover: 500;
+    --z-toast: 600;
+    --z-tooltip: 700;
+    
+    /* Layout */
+    --header-height: 70px;
+    --container-max-width: 1280px;
+    --container-padding: var(--space-sm);
+  }

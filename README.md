@@ -11,11 +11,6 @@ A modern, responsive React website for the Cloud Explorer mobile application. Th
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
 - [Project Structure](#project-structure)
-- [Customization](#customization)
-  - [Styling](#styling)
-  - [Content](#content)
-  - [Images](#images)
-- [Deployment](#deployment)
 - [Technologies Used](#technologies-used)
 - [Contributing](#contributing)
 - [License](#license)
@@ -68,76 +63,58 @@ http://localhost:3000
 
 ```bash
 cloud-explorer-website/
-├── public/
+├── public/                     # Static assets served directly
 │   ├── favicon.ico
-│   ├── index.html
+│   ├── index.html              # Main HTML template
 │   ├── logo.svg
-│   ├── icons/
-│   │   ├── learning-icon.svg
-│   │   ├── quiz-icon.svg
-│   │   └── ...
-│   └── screenshots/
-│       ├── screenshot1.png
-│       └── ...
-├── src/
-│   ├── components/
-│   │   ├── Header.jsx
-│   │   ├── Hero.jsx
-│   │   ├── Features.jsx
-│   │   ├── Architecture.jsx
-│   │   ├── Screenshots.jsx
-│   │   └── Footer.jsx
-│   ├── App.jsx
-│   ├── index.js
-│   └── styles.css
+│   └── cloud_explorer.png      # Screenshot shown in README
+├── src/                        # Application source code
+│   ├── assets/                 # Static assets like images, fonts
+│   │   └── screenshots/
+│   │       ├── screenshot1.png
+│   │       ├── screenshot2.png # Corrected duplicate name
+│   │       └── ...
+│   ├── components/             # Reusable UI components
+│   │   ├── Header/
+│   │   │   ├── Header.jsx
+│   │   │   └── Header.module.css
+│   │   ├── Hero/
+│   │   │   ├── Hero.jsx
+│   │   │   └── Hero.module.css
+│   │   ├── Features/           # Example: Section-specific component
+│   │   │   ├── Features.jsx
+│   │   │   └── Features.module.css
+│   │   ├── Architecture/
+│   │   │   ├── Architecture.jsx
+│   │   │   └── Architecture.module.css
+│   │   ├── Screenshots/
+│   │   │   ├── Screenshots.jsx
+│   │   │   └── Screenshots.module.css
+│   │   ├── Footer/
+│   │   │   ├── Footer.jsx
+│   │   │   └── Footer.module.css
+│   │   ├── PrivacyPolicy/      # Example: Page-level component
+│   │   │   ├── PrivacyPolicy.jsx
+│   │   │   └── PrivacyPolicy.module.css
+│   │   └── shared/             # Common components used across features
+│   │       ├── Button/
+│   │       │   ├── Button.jsx
+│   │       │   └── Button.module.css
+│   │       └── Card/
+│   │           ├── Card.jsx
+│   │           └── Card.module.css
+│   ├── styles/                 # Global styles and configurations
+│   │   ├── variables.css       # CSS custom properties (variables)
+│   │   ├── typography.css      # Global typography rules
+│   │   ├── animations.css      # Reusable animations
+│   │   └── global.css          # Global styles, resets
+│   ├── utils/                  # Utility functions, hooks
+│   │   └── hooks.js            # Custom React hooks
+│   ├── App.jsx                 # Main application component (routing, layout)
+│   └── index.js                # Application entry point
 ├── package.json
 └── README.md
 ```
-
-## Customization
-
-### Styling
-
-The website uses a custom CSS file (`src/styles.css`) with CSS variables for easy theming. To change the color scheme, modify the CSS variables at the top of the file:
-
-```css
-:root {
-  --primary-color: #4285F4;
-  --secondary-color: #34A853;
-  --accent-color: #FBBC05;
-  --dark-color: #212121;
-  --light-color: #F8F9FA;
-  --text-color: #333333;
-  --light-text: #FFFFFF;
-  --gradient-primary: linear-gradient(135deg, #4285F4, #0F9D58);
-  --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  --border-radius: 12px;
-  --transition: all 0.3s ease;
-}
-```
-
-### Content
-
-To update the content:
-
-1. **Features**: Modify the `features` array in `src/components/Features.jsx`
-2. **Architecture details**: Update the content in `src/components/Architecture.jsx`
-3. **Screenshots**: Change the `screenshots` array in `src/components/Screenshots.jsx`
-4. **Hero text**: Edit the content in `src/components/Hero.jsx`
-5. **Footer links**: Update the links and content in `src/components/Footer.jsx`
-
-### Images
-
-Replace the placeholder images in the `public` folder with your own assets:
-
-- `/logo.svg` - Your app logo
-- `/cloud_explorer.png` - Main app image for the hero section
-- `/icons/` - Feature icons (SVG format recommended)
-- `/screenshots/` - App screenshots and GIFs
-- `/CloudExplocer-App-Architecture.svg` - Application architecture diagram
-- `/CloudExplorer-Cloud-Architecture.svg` - Cloud architecture diagram
-
-## Deployment
 
 ### Build for Production
 
@@ -148,47 +125,6 @@ npm run build
 ```
 
 This will generate a `build` directory with optimized files for deployment.
-
-### Deploy to GitHub Pages
-
-1. Install GitHub Pages package:
-
-```bash
-npm install --save gh-pages
-```
-
-2. Add the following to your `package.json`:
-
-```json
-"homepage": "https://yourusername.github.io/cloud-explorer-website",
-"scripts": {
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d build"
-}
-```
-
-3. Deploy the website:
-
-```bash
-npm run deploy
-```
-
-### Deploy to Netlify
-
-1. Create a `netlify.toml` file in the root directory:
-
-```toml
-[build]
-  command = "npm run build"
-  publish = "build"
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-```
-
-2. Deploy using the Netlify CLI or connect your repository to Netlify for continuous deployment.
 
 ## Technologies Used
 

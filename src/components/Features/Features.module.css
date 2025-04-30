@@ -1,0 +1,65 @@
+/* c:\Users\thabi\Desktop\cloud-explorer-website\src\components\Features\Features.module.css */
+
+.features {
+  padding: 60px 0;
+  background-color: #f9f9f9; /* Light background for contrast */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.sectionHeader h2 {
+  font-size: 2rem; /* Example size */
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.sectionHeader p {
+  font-size: 1.1rem; /* Example size */
+  color: #666;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+  gap: 30px;
+}
+
+.featureCard {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featureCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.featureIcon {
+  font-size: 2.5rem; /* Adjust icon size */
+  color: #007bff; /* Example icon color */
+  margin-bottom: 20px;
+}
+
+.featureCard h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.featureCard p {
+  color: #666;
+  line-height: 1.6;
+}

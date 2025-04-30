@@ -1,0 +1,60 @@
+/* c:\Users\thabi\Desktop\cloud-explorer-website\src\components\PrivacyPolicy\PrivacyPolicy.module.css */
+
+.privacyPolicy {
+  padding: 60px 0;
+  background-color: #ffffff; /* Or your desired background */
+  color: #333;
+  line-height: 1.7;
+}
+
+.container {
+  max-width: 900px; /* Slightly narrower for text content */
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.sectionHeader h2 {
+  font-size: 2.2rem; /* Example size */
+  color: #333;
+}
+
+.privacySection {
+  margin-bottom: 40px;
+}
+
+.privacySection h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.privacySection p,
+.privacySection ul {
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.privacySection ul {
+  padding-left: 20px;
+  list-style: disc;
+}
+
+.privacySection li {
+  margin-bottom: 10px;
+}
+
+.privacySection a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.privacySection a:hover {
+  text-decoration: underline;
+}

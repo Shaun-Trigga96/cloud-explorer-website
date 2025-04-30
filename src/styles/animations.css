@@ -1,0 +1,153 @@
+/* src/styles/animations.css */
+@import './variables.css';
+
+/* Fade in */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn var(--transition-normal) forwards;
+}
+
+/* Fade in up */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp var(--transition-normal) forwards;
+}
+
+/* Staggered fade in for children */
+.stagger-fade-in > * {
+  opacity: 0;
+  animation: fadeIn var(--transition-normal) forwards;
+}
+
+.stagger-fade-in > *:nth-child(1) { animation-delay: 100ms; }
+.stagger-fade-in > *:nth-child(2) { animation-delay: 200ms; }
+.stagger-fade-in > *:nth-child(3) { animation-delay: 300ms; }
+.stagger-fade-in > *:nth-child(4) { animation-delay: 400ms; }
+.stagger-fade-in > *:nth-child(5) { animation-delay: 500ms; }
+.stagger-fade-in > *:nth-child(6) { animation-delay: 600ms; }
+
+/* Float animation */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+/* Glow animation */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px rgba(0, 101, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 101, 255, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(0, 101, 255, 0.5);
+  }
+}
+
+.glow {
+  animation: glow 2s infinite;
+}
+
+/* Rotate */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rotate {
+  animation: rotate 20s linear infinite;
+}
+
+/* Background shimmer */
+@keyframes shimmer {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--off-white) 0%,
+    var(--white) 50%,
+    var(--off-white) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite;
+}
+
+/* Hover animations */
+.hover-lift {
+  transition: transform var(--transition-normal);
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+}
+
+.hover-scale {
+  transition: transform var(--transition-normal);
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* Button press effect */
+.press-effect {
+  transition: transform var(--transition-fast);
+}
+
+.press-effect:active {
+  transform: scale(0.97);
+}
