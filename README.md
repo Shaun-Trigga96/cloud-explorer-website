@@ -2,7 +2,7 @@
 
 A modern, responsive React website for the Cloud Explorer mobile application. This website serves as a landing page to showcase the Cloud Explorer app's features, architecture, and screenshots.
 
-![Cloud Explorer Website Screenshot](public/cloud_explorer.png)
+![Cloud Explorer Website Screenshot](public/logo192.png)
 
 ## Table of Contents
 
