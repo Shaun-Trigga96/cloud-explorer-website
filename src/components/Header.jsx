@@ -31,9 +31,10 @@ function Header() {
         </Link>
         <nav className={`navigation ${menuOpen ? 'open' : ''}`}>
           <ul>
-            <li><Link to="#features">Features</Link></li>
-            <li><Link to="#architecture">Architecture</Link></li>
-            <li><Link to="#screenshots">Screenshots</Link></li>
+            <li><Link to="/">Home</Link></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#architecture">Architecture</a></li>
+            <li><a href="#screenshots">Screenshots</a></li>
             <li><Link to="/privacy-policy">Privacy Policy</Link></li>
             <li><a href="#download" className="download-btn">Download App</a></li>
           </ul>

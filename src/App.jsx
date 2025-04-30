@@ -9,7 +9,6 @@ import Screenshots from './components/Screenshots';
 import Footer from './components/Footer';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import ScrollToTop from './components/ScrollToTop'; // Import ScrollToTop
-import './App.css';
 import './styles.css';
 
 function App() {
