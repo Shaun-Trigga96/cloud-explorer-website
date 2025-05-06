@@ -1,98 +1,142 @@
 /* Footer Section */
 .footer {
-    background-color: var(--dark-color);
-    color: var(--light-text);
-    padding: 40px 0;
-    /* Remove the highlight */
-    outline: none;
-  }
-  
-  .footer-content {
-    display: grid;
-    /* Explicitly give the logo section ~1 part and the links section ~3 parts */
-    grid-template-columns: 1fr 3fr;
-    gap: 30px;
-    margin-bottom: 30px;
-  }
-  
-  .footer-logo {
-    display: flex;
+  background-color: var(--dark);
+  color: var(--white);
+  padding: 40px 0;
+  outline: none;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+.footerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.footerLogo {
+  max-width: 250px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footerLogo img {
+  width: 120px;
+  height: auto;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.footerLogo h3 {
+  margin-bottom: 10px;
+  color: var(--white);
+}
+
+.footerLinks {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.linkGroup {
+  display: flex;
+  flex-direction: column;
+  min-width: 120px;
+}
+
+.linkGroup h4 {
+  margin-bottom: 15px;
+  color: var(--white);
+}
+
+.linkGroup ul {
+  list-style: none;
+  padding: 0;
+}
+
+.linkGroup li {
+  margin-bottom: 10px;
+}
+
+.linkGroup a {
+  color: var(--white);
+  text-decoration: none;
+  transition: var(--transition-normal);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.linkGroup a:hover {
+  color: var(--primary);
+}
+
+.socialLinks {
+  display: flex;
+  flex-direction: column;
+}
+
+.socialLinks a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.socialLinks svg {
+  font-size: 20px;
+  color: var(--white);
+}
+
+.downloadBtn {
+  font-weight: 600;
+  color: var(--accent) !important;
+}
+
+.downloadBtn:hover {
+  color: var(--accent-light) !important;
+}
+
+.footerBottom {
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 20px;
+}
+
+.footerBottom p {
+  margin-bottom: 5px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .footerContent {
     flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .footer-logo img {
-      width: 35px; /* Let's try an even smaller size */
-      height: 35px; /* Keep height consistent */
-      margin-bottom: 10px;
-      display: block; /* Sometimes helps with layout issues */
-    }
-  
-  .footer-logo h6 {
-    margin-bottom: 10px;
-    color: var(--light-text);
-  }
-  
-  .footer-links {
-    display: flex;
-    justify-content: space-around;
-    gap: 20px;
-  }
-  
-  .link-group {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .link-group h4 {
-    margin-bottom: 15px;
-    color: var(--light-text);
-  }
-  
-  .link-group ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .link-group li {
-    margin-bottom: 10px;
-  }
-  
-  .link-group a {
-    color: var(--light-text);
-    text-decoration: none;
-    transition: var(--transition);
-    display: flex;
     align-items: center;
-    gap: 10px;
-  }
-  
-  .link-group a:hover {
-    color: var(--primary-color);
-  }
-  
-  .social-links {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .social-links a {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .social-links svg {
-    font-size: 20px;
-    color: var(--light-text);
-  }
-  
-  .footer-bottom {
     text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    padding-top: 20px;
   }
   
-  .footer-bottom p {
-    margin-bottom: 5px;
+  .footerLogo {
+    align-items: center;
+    margin-bottom: 20px;
   }
+  
+  .footerLinks {
+    justify-content: center;
+  }
+  
+  .linkGroup {
+    align-items: center;
+  }
+}

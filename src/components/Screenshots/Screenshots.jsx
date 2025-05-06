@@ -2,9 +2,21 @@
 import { useState, useEffect, useCallback } from 'react';
 // Import the screenshot images
 import dashboardImage from '../../assets/screenshots/Dashboard.png';
-import modulesImage from '../../assets/screenshots/ModuleScreen.png';
+import modulesImage from '../../assets/screenshots/Modules.png';
 import quizzesImage from '../../assets/screenshots/Quizzes.png';
 import examsImage from '../../assets/screenshots/Exams.png';
+import learningPathsImage from '../../assets/screenshots/LearningPaths.png';
+import currentPathImage from '../../assets/screenshots/CurrentPath.png';
+import quizProgressImage from '../../assets/screenshots/QuizProgress.png';
+import quizResultsImage from '../../assets/screenshots/QuizResults.png';
+import examStartImage from '../../assets/screenshots/ExamStart.png';
+import examProgressImage from '../../assets/screenshots/ExamProgress.png';
+import examResultsImage from '../../assets/screenshots/ExamResults.png';
+import communityPostsImage from '../../assets/screenshots/CommunityPosts.png';
+import communityUsersImage from '../../assets/screenshots/CommunityUsers.png';
+import communityEventsImage from '../../assets/screenshots/CommunityEvents.png';
+import settingsImage from '../../assets/screenshots/Settings.png';
+import profileImage from '../../assets/screenshots/Profile.png';
 import styles from './Screenshots.module.css';
 
 function Screenshots() {
@@ -35,6 +47,78 @@ function Screenshots() {
       id: 4,
       image: examsImage,
       title: 'Exam Interface',
+      description: 'Test your knowledge with comprehensive exams'
+    },
+    {
+      id: 5,
+      image: learningPathsImage,
+      title: 'Learning Paths',
+      description: 'Explore curated learning paths tailored to your goals'
+    },
+    {
+      id: 6,
+      image: currentPathImage,
+      title: 'Current Learning Path',
+      description: 'Track your progress within your active learning path'
+    },
+    {
+      id: 7,
+      image: quizProgressImage,
+      title: 'Quiz Progress',
+      description: 'Monitor your quiz attempts and scores'
+    },
+    {
+      id: 8,
+      image: quizResultsImage,
+      title: 'Quiz Results',
+      description: 'Review detailed feedback on your quiz performance'
+    },
+    {
+      id: 9,
+      image: examStartImage,
+      title: 'Exam Start Screen',
+      description: 'Prepare to test your comprehensive knowledge'
+    },
+    {
+      id: 10,
+      image: examProgressImage,
+      title: 'Exam in Progress',
+      description: 'Navigate through the exam questions'
+    },
+    {
+      id: 11,
+      image: examResultsImage,
+      title: 'Exam Results',
+      description: 'View your final exam score and performance breakdown'
+    },
+    {
+      id: 12,
+      image: communityPostsImage,
+      title: 'Community Forum',
+      description: 'Engage with fellow learners and share insights'
+    },
+    {
+      id: 13,
+      image: communityUsersImage,
+      title: 'Community Members',
+      description: 'Connect with other users in the Cloud Explorer community'
+    },
+    {
+      id: 14,
+      image: communityEventsImage,
+      title: 'Community Events',
+      description: 'Discover and participate in upcoming community events'
+    },
+    {
+      id: 15,
+      image: settingsImage,
+      title: 'Account Settings',
+      description: 'Manage your account preferences and settings'
+    },
+    {
+      id: 16,
+      image: profileImage,
+      title: 'User Profile',
       description: 'Test your knowledge with comprehensive exams'
     }
   ];

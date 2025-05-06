@@ -2,16 +2,16 @@
 import React from 'react';
 import { FaGithub, FaTwitter, FaLinkedin } from 'react-icons/fa'; // Import icons
 import { Link } from 'react-router-dom';
-import footerLogo from '../../assets/images/cloud_explorer.png'; // Corrected logo path
+import logo from '../../assets/images/cloud_explorer.png'; // Corrected logo path
 import styles from './Footer.module.css'; // Import the CSS module
 
 function Footer() {
   return (
     <footer className={styles.footer}>
-    <div className={styles.container}> {/* Assuming a global or footer-specific container style */}
-      <div className={styles.footerContent}>
-        <div className={styles.footerLogo}>
-            <img src={footerLogo} alt="Cloud Explorer" />
+      <div className={styles.container}>
+        <div className={styles.footerContent}>
+          <div className={styles.footerLogo}>
+             <img src={logo} alt="Cloud Explorer" /> 
             <h3>Cloud Explorer</h3>
             <p>Master GCP, AWS & Azure with ease</p>
           </div>
@@ -27,15 +27,15 @@ function Footer() {
             <div className={styles.linkGroup}>
               <h4>Resources</h4>
               <ul>
-              <li><a href="#download" className={styles.downloadBtn}>Download</a></li> {/* Assuming a downloadBtn style exists */}
-              <li><a href="#documentation">Documentation</a></li>
+                <li><a href="#download" className={styles.downloadBtn}>Download</a></li>
+                <li><a href="#documentation">Documentation</a></li>
                 <li><a href="#contribute">Contribute</a></li>
                 <li><Link to="/privacy-policy">Privacy Policy</Link></li>
               </ul>
             </div>
-            <div className={styles.linkGroup}> {/* Use styles object */}
+            <div className={styles.linkGroup}>
               <h4>Connect</h4>
-              <ul className={styles.socialLinks}> {/* Use styles object */}
+              <ul className={styles.socialLinks}>
                 <li>
                   <a href="#github">
                     <FaGithub /> {/* GitHub icon */}
