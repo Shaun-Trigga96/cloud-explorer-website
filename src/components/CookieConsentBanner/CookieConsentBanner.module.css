@@ -1,0 +1,49 @@
+/* components/CookieConsentBanner/CookieConsentBanner.module.css */
+.cookieBanner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--cookie-banner-bg-color);
+  color: var(--cookie-banner-text-color);
+  padding: 20px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Ensure it's above other content */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  transform: translateY(100%); /* Start hidden */
+  opacity: 0;
+}
+
+.cookieBanner.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.cookieText {
+  margin-right: 20px;
+  flex-grow: 1;
+}
+
+.cookieText a {
+  color: var(--cookie-banner-link-color);
+  text-decoration: underline;
+}
+
+.cookieActions button {
+  background-color: var(--cookie-banner-button-bg-color);
+  color: var(--cookie-banner-button-text-color);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.cookieActions button:hover {
+  background-color: var(--cookie-banner-button-hover-bg-color);
+}

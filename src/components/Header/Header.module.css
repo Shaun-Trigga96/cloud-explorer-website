@@ -1,4 +1,4 @@
-/* c:\Users\thabi\Desktop\cloud-explorer-website\src\components\Header\Header.module.css */
+/* src/components/Header/Header.module.css */
 
 .header {
   position: fixed;
@@ -6,23 +6,65 @@
   left: 0;
   width: 100%;
   padding: 15px 0;
-  background-color: transparent; /* Or your default background */
-  z-index: 1000;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  /* Add other base header styles */
+  background-color: transparent; /* Default light mode transparent */
+  z-index: var(--z-sticky); /* Use variable */
+  transition: background-color var(--transition-normal), box-shadow var(--transition-normal);
+  color: var(--header-text); /* Use theme variable for text */
 }
 
 .header.scrolled {
-  background-color: #ffffff; /* Example scrolled background */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: var(--header-background); /* Use theme variable */
+  box-shadow: var(--shadow-md); /* Use theme variable */
 }
 
+/* Dark Mode Specific Styles for Header */
+.header.darkMode {
+  /* Scrolled state in dark mode might be different or the same as default dark header */
+  /* background-color: transparent; Initially transparent even in dark mode */
+  color: var(--off-white); /* Text color in dark mode */
+}
+
+.header.darkMode.scrolled {
+  background-color: var(--dark-gray); /* Scrolled dark mode background */
+  box-shadow: var(--shadow-md); /* Shadow might need adjustment for dark */
+  color: var(--off-white);
+}
+
+.header.darkMode .logo span {
+  color: var(--off-white); /* Logo text in dark mode */
+}
+
+.header.darkMode .navigation a {
+  color: var(--off-white); /* Nav links in dark mode */
+}
+
+.header.darkMode .navigation a:hover,
+.header.darkMode .navigation a:focus {
+  color: var(--primary-light); /* Nav link hover in dark mode */
+}
+
+.header.darkMode .downloadBtn {
+  background-color: var(--primary-light);
+  color: var(--dark); /* Text on dark mode button */
+}
+
+.header.darkMode .downloadBtn:hover {
+  background-color: var(--primary);
+}
+
+.header.darkMode .themeToggleBtn {
+  color: var(--off-white); /* Icon color for toggle button in dark mode */
+}
+
+.header.darkMode .mobileMenuBtn span {
+  background-color: var(--off-white); /* Hamburger icon lines in dark mode */
+}
+
+
 .container {
-  /* If you use a global container class, you might not need this.
-     If the header needs specific container adjustments, add them here. */
-  max-width: 1200px; /* Example */
+  max-width: var(--container-max-width); /* Use variable */
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 var(--container-padding); /* Use variable */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -32,21 +74,19 @@
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: inherit; /* Or your specific logo text color */
+  color: inherit;
 }
 
 .logo img {
-  height: 40px; /* Adjust as needed */
+  height: 40px;
   margin-right: 10px;
 }
 
 .logo span {
   font-size: 1.5rem;
   font-weight: bold;
-}
-
-.navigation {
-  /* Styles for your navigation links container */
+  color: var(--header-text); /* Use theme variable */
+  transition: color var(--transition-normal);
 }
 
 .navigation ul {
@@ -58,51 +98,128 @@
 }
 
 .navigation li {
-  margin-left: 20px; /* Adjust spacing */
+  margin-left: var(--space-sm); /* Use variable */
 }
 
 .navigation a {
   text-decoration: none;
-  color: #333; /* Adjust link color */
-  transition: color 0.3s ease;
+  color: var(--header-text); /* Use theme variable */
+  transition: color var(--transition-normal);
+  font-weight: 500;
 }
 
 .navigation a:hover,
 .navigation a:focus {
-  color: #007bff; /* Example hover color */
+  color: var(--link-hover-color); /* Use theme variable */
 }
 
 .downloadBtn {
-  background-color: #007bff; /* Example button style */
-  color: white;
-  padding: 8px 15px;
-  border-radius: 5px;
+  background-color: var(--primary); /* Use variable */
+  color: var(--white); /* Use variable */
+  padding: var(--space-xs) var(--space-sm); /* Use variables */
+  border-radius: var(--border-radius-md); /* Use variable */
   text-decoration: none;
-  transition: background-color 0.3s ease;
+  transition: background-color var(--transition-normal);
+  font-weight: 600;
 }
 
 .downloadBtn:hover {
-  background-color: #0056b3; /* Darker shade on hover */
+  background-color: var(--primary-dark); /* Use variable */
 }
+
+.themeToggleBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-xs);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--header-text); /* Use theme variable for icon color */
+  transition: color var(--transition-normal);
+}
+
+.themeToggleBtn:hover {
+  color: var(--link-hover-color); /* Use theme variable */
+}
+
 
 .mobileMenuBtn {
-  /* Styles for your mobile menu button (hamburger icon) */
-  display: none; /* Hide on desktop by default */
+  display: none;
   cursor: pointer;
-  /* Add burger icon styles */
+  flex-direction: column;
+  justify-content: space-around;
+  width: 24px;
+  height: 18px; /* Adjusted for better proportion */
+  padding: 0; /* Remove padding if any */
 }
 
-/* Add media queries for mobile navigation (.open class, .mobileMenuBtn display) */
+.mobileMenuBtn span {
+  display: block;
+  width: 100%;
+  height: 2px; /* Thinner lines */
+  background-color: var(--header-text); /* Use theme variable */
+  border-radius: 1px;
+  transition: background-color var(--transition-normal), transform 0.3s ease, opacity 0.3s ease;
+}
+
+
 @media (max-width: 768px) {
   .navigation {
-    /* Styles for mobile menu (e.g., position absolute, hidden by default) */
+    display: none; /* Hide full navigation on mobile */
+    /* Further mobile menu styles (e.g., absolute positioning, full width) would go here
+       when .open class is active */
   }
 
   .navigation.open {
-    /* Styles for when the mobile menu is visible */
+    display: flex; /* Show when open */
+    flex-direction: column;
+    position: absolute;
+    top: var(--header-height); /* Position below header */
+    left: 0;
+    width: 100%;
+    background-color: var(--header-background); /* Use theme variable */
+    box-shadow: var(--shadow-md);
+    padding: var(--space-sm);
+    z-index: calc(var(--z-sticky) - 1); /* Below the header but above content */
+  }
+  .navigation.open.darkMode { /* Specific styles for open mobile menu in dark mode */
+      background-color: var(--dark-gray);
   }
 
+  .navigation.open ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navigation.open li {
+    margin-left: 0;
+    margin-bottom: var(--space-sm);
+    width: 100%;
+    text-align: center;
+  }
+
+  .navigation.open li:last-child {
+    margin-bottom: 0;
+  }
+
+  .navigation.open .themeToggleBtn { /* Ensure toggle is visible and styled in open mobile menu */
+    margin-top: var(--space-sm);
+  }
+
+
   .mobileMenuBtn {
-    display: block; /* Show on mobile */
+    display: flex; /* Show on mobile */
+  }
+
+  /* Hamburger to X animation for .open state */
+  .header.open .mobileMenuBtn span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .header.open .mobileMenuBtn span:nth-child(2) {
+    opacity: 0;
+  }
+  .header.open .mobileMenuBtn span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
   }
 }

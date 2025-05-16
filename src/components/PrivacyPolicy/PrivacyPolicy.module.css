@@ -2,8 +2,8 @@
 
 .privacyPolicy {
   padding: 60px 0;
-  background-color: #ffffff; /* Or your desired background */
-  color: #333;
+  background-color: var(--privacy-policy-page-bg-color);
+  color: var(--privacy-policy-base-text-color);
   line-height: 1.7;
 }
 
@@ -17,12 +17,12 @@
   text-align: center;
   margin-bottom: 40px;
   padding-bottom: 20px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--privacy-policy-section-header-border-color);
 }
 
 .sectionHeader h2 {
   font-size: 2.2rem; /* Example size */
-  color: #333;
+  color: var(--privacy-policy-section-header-title-color);
 }
 
 .privacySection {
@@ -32,13 +32,13 @@
 .privacySection h3 {
   font-size: 1.5rem;
   margin-bottom: 15px;
-  color: #444;
+  color: var(--privacy-policy-section-title-color);
 }
 
 .privacySection p,
 .privacySection ul {
   margin-bottom: 15px;
-  color: #555;
+  color: var(--privacy-policy-section-content-text-color);
 }
 
 .privacySection ul {
@@ -51,10 +51,10 @@
 }
 
 .privacySection a {
-  color: #007bff;
+  color: var(--privacy-policy-section-link-color);
   text-decoration: none;
 }
 
 .privacySection a:hover {
-  text-decoration: underline;
+  text-decoration: var(--privacy-policy-section-link-hover-decoration);
 }

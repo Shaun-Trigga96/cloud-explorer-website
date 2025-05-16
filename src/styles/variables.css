@@ -1,80 +1,290 @@
 /* src/styles/variables.css */
 :root {
-    /* Color Palette - Futuristic, Modern */
-    --primary: #0066FF;
-    --primary-dark: #0047B3;
-    --primary-light: #4D94FF;
-    --secondary: #6E00FF;
-    --secondary-dark: #4C00B3;
-    --secondary-light: #9C4DFF;
-    --accent: #00E5FF;
-    --accent-dark: #00B3CC;
-    --accent-light: #99F8FF;
-    
-    /* Neutrals */
-    --dark: #0A1128;
-    --dark-gray: #232f3e;
-    --medium-gray: #4A5568;
-    --light-gray: #A0AEC0;
-    --off-white: #F7FAFC;
-    --white: #FFFFFF;
-    
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, var(--primary), var(--secondary));
-    --gradient-accent: linear-gradient(135deg, var(--accent), var(--primary-light));
-    
-    /* Design System */
-    --space-xxs: 0.25rem;  /* 4px */
-    --space-xs: 0.5rem;    /* 8px */
-    --space-sm: 1rem;      /* 16px */
-    --space-md: 1.5rem;    /* 24px */
-    --space-lg: 2rem;      /* 32px */
-    --space-xl: 3rem;      /* 48px */
-    --space-xxl: 4rem;     /* 64px */
-    
-    /* Typography */
-    --font-family: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-size-xs: 0.75rem;   /* 12px */
-    --font-size-sm: 0.875rem;  /* 14px */
-    --font-size-base: 1rem;    /* 16px */ 
-    --font-size-md: 1.125rem;  /* 18px */
-    --font-size-lg: 1.25rem;   /* 20px */
-    --font-size-xl: 1.5rem;    /* 24px */
-    --font-size-2xl: 2rem;     /* 32px */
-    --font-size-3xl: 2.5rem;   /* 40px */
-    --font-size-4xl: 3rem;     /* 48px */
-    
-    /* Effects */
-    --border-radius-sm: 4px;
-    --border-radius-md: 8px;
-    --border-radius-lg: 16px;
-    --border-radius-xl: 24px;
-    --border-radius-full: 9999px;
-    
-    --shadow-sm: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    --shadow-md: 0 4px 6px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.06);
-    --shadow-lg: 0 10px 15px rgba(0,0,0,0.1), 0 4px 6px rgba(0,0,0,0.05);
-    --shadow-xl: 0 20px 25px rgba(0,0,0,0.1), 0 10px 10px rgba(0,0,0,0.04);
-    
-    /* Animations */
-    --transition-fast: 150ms ease;
-    --transition-normal: 300ms ease;
-    --transition-slow: 500ms ease;
-    
-    /* Z-index layers */
-    --z-negative: -1;
-    --z-base: 0;
-    --z-above: 10;
-    --z-dropdown: 100;
-    --z-sticky: 200;
-    --z-drawer: 300;
-    --z-modal: 400;
-    --z-popover: 500;
-    --z-toast: 600;
-    --z-tooltip: 700;
-    
-    /* Layout */
-    --header-height: 70px;
-    --container-max-width: 1280px;
-    --container-padding: var(--space-sm);
-  }
+  /* Color Palette - Futuristic, Modern */
+  --primary: #0066FF;
+  --primary-dark: #0047B3;
+  --primary-light: #4D94FF;
+  --secondary: #6E00FF;
+  --secondary-dark: #4C00B3;
+  --secondary-light: #9C4DFF;
+  --accent: #00E5FF;
+  --accent-dark: #00B3CC;
+  --accent-light: #99F8FF;
+
+
+  /* Neutrals - Light Mode (Default) */
+  --text-color: var(--dark);
+  /* Renamed from --dark for clarity */
+  --background-color: var(--off-white);
+  --card-background: var(--white);
+  --header-background: var(--white);
+  --header-text: var(--dark);
+  --link-color: var(--dark);
+  --link-hover-color: var(--primary);
+  --border-color: var(--light-gray);
+  /* Added for borders */
+
+  /* Original Neutrals (can be kept for reference or specific uses) */
+  --dark: #0A1128;
+  --dark-gray: #232f3e;
+  --medium-gray: #4A5568;
+  --light-gray: #A0AEC0;
+  --off-white: #F7FAFC;
+  --white: #FFFFFF;
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, var(--primary), var(--secondary));
+  --gradient-accent: linear-gradient(135deg, var(--accent), var(--primary-light));
+
+  /* Design System */
+  --space-xxs: 0.25rem;
+  /* 4px */
+  --space-xs: 0.5rem;
+  /* 8px */
+  --space-sm: 1rem;
+  /* 16px */
+  --space-md: 1.5rem;
+  /* 24px */
+  --space-lg: 2rem;
+  /* 32px */
+  --space-xl: 3rem;
+  /* 48px */
+  --space-xxl: 4rem;
+  /* 64px */
+
+  /* Typography */
+  --font-family: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-size-xs: 0.75rem;
+  /* 12px */
+  --font-size-sm: 0.875rem;
+  /* 14px */
+  --font-size-base: 1rem;
+  /* 16px */
+  --font-size-md: 1.125rem;
+  /* 18px */
+  --font-size-lg: 1.25rem;
+  /* 20px */
+  --font-size-xl: 1.5rem;
+  /* 24px */
+  --font-size-2xl: 2rem;
+  /* 32px */
+  --font-size-3xl: 2.5rem;
+  /* 40px */
+  --font-size-4xl: 3rem;
+  /* 48px */
+
+  /* Effects */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 16px;
+  --border-radius-xl: 24px;
+  --border-radius-full: 9999px;
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04);
+
+  /* Animations */
+  --transition-fast: 150ms ease;
+  --transition-normal: 300ms ease;
+  --transition-slow: 500ms ease;
+
+  /* Z-index layers */
+  --z-negative: -1;
+  --z-base: 0;
+  --z-above: 10;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-drawer: 300;
+  --z-modal: 400;
+  --z-popover: 500;
+  --z-toast: 600;
+  --z-tooltip: 700;
+
+  /* Layout */
+  --header-height: 70px;
+  --container-max-width: 1280px;
+  --container-padding: var(--space-sm);
+
+  /* Hero Section Specific - Light Mode */
+  --hero-background-gradient: linear-gradient(135deg, #6e8efb, #a777e3);
+  --hero-text-color: var(--white);
+  --hero-primary-btn-bg: var(--white);
+  --hero-primary-btn-text: #6e8efb;
+  /* Match gradient start */
+  --hero-primary-btn-hover-bg: #f0f0f0;
+  --hero-secondary-btn-border: var(--white);
+  --hero-secondary-btn-text: var(--white);
+  --hero-secondary-btn-hover-bg: rgba(255, 255, 255, 0.1);
+  --wave-divider-fill: var(--background-color);
+  /* Wave should match the next section's bg */
+   /* Features Section Specific - Light Mode */
+   --features-bg-color: #f9f9f9; /* Original light background */
+   --features-section-header-text-color: var(--dark); /* e.g. #333 */
+   --features-section-subheader-text-color: var(--medium-gray); /* e.g. #666 */
+   --feature-card-bg-color: var(--white);
+   --feature-card-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+   --feature-card-hover-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+   --feature-icon-color: var(--primary); /* Original icon color #007bff */
+   --feature-card-title-color: var(--dark); /* e.g. #333 */
+   --feature-card-text-color: var(--medium-gray); /* e.g. #666 */
+
+   /* Architecture Section Specific - Light Mode */
+   --architecture-bg-color: var(--white); /* Original: #ffffff */
+   --architecture-section-header-text-color: #333;
+   --architecture-section-subheader-text-color: #666;
+   --architecture-tabs-bg-color: #f9f9f9;
+   --architecture-tabs-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+   --architecture-tab-buttons-bg-color: #e9ecef;
+   --architecture-tab-button-text-color: #666;
+   --architecture-tab-button-hover-bg-color: #dee2e6;
+   --architecture-tab-button-active-text-color: var(--primary); /* Original: #007bff */
+   --architecture-tab-button-active-border-color: var(--primary); /* Original: #007bff */
+   --architecture-details-title-color: #333;
+   --architecture-details-text-color: #555;
+   --architecture-details-strong-text-color: #333;
+   --architecture-image-bg-color: transparent; /* If SVGs have transparent backgrounds */
+
+  /* Screenshots Section Specific - Light Mode */
+  --screenshots-bg-color: #f0f4f8; /* Light, slightly cool background */
+  --screenshots-section-header-text-color: #333333; /* Specific dark gray for section titles */
+  --screenshots-section-subheader-text-color: #666666; /* Specific medium gray for section subtitles */
+  --screenshots-viewer-bg-color: var(--white); /* Viewer background */
+  --screenshots-viewer-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Viewer shadow */
+  --screenshots-main-border-color: #e0e0e0; /* Separator line color */
+  --screenshots-info-title-color: #333333; /* Screenshot title color */
+  --screenshots-info-text-color: #555555; /* Screenshot description color */
+  --screenshots-thumbnails-bg-color: #f8f9fa; /* Background for thumbnail area */
+  --screenshots-thumbnail-active-border-color: var(--primary); /* Active thumbnail border */
+  --screenshots-nav-button-bg-color: rgba(255, 255, 255, 0.8); /* Nav button background */
+  --screenshots-nav-button-text-color: #333333; /* Nav button icon/text color */
+  --screenshots-nav-button-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Nav button shadow */
+  --screenshots-nav-button-hover-bg-color: var(--white); /* Nav button hover background */
+  --screenshots-indicators-bg-color: #f8f9fa; /* Background for indicators strip */
+  --screenshots-indicator-bg-color: #cccccc; /* Default indicator dot color */
+  --screenshots-indicator-hover-bg-color: #aaaaaa; /* Indicator dot hover color */
+  --screenshots-indicator-active-bg-color: var(--primary); /* Active indicator dot color */
+
+  /* Privacy Policy Page - Light Mode */
+  --privacy-policy-page-bg-color: var(--white);
+  --privacy-policy-base-text-color: #333333;
+  --privacy-policy-section-header-title-color: #333333;
+  --privacy-policy-section-header-border-color: #eeeeee;
+  --privacy-policy-section-title-color: #444444; /* For h3 */
+  --privacy-policy-section-content-text-color: #555555; /* For p, ul */
+  --privacy-policy-section-link-color: var(--primary);
+  --privacy-policy-section-link-hover-decoration: underline;
+
+  
+  /* Cookie Consent Banner - Light Mode */
+  --cookie-banner-bg-color: #f8f9fa;
+  --cookie-banner-text-color: #333333;
+  --cookie-banner-link-color: var(--primary);
+  --cookie-banner-button-bg-color: var(--primary);
+  --cookie-banner-button-text-color: var(--white);
+  --cookie-banner-button-hover-bg-color: var(--primary-dark);
+}
+
+/* Dark Mode Variables */
+body.dark-mode {
+  --text-color: var(--off-white);
+  --background-color: var(--dark);
+  /* Use --dark for dark mode background */
+  --card-background: var(--dark-gray);
+  /* A slightly lighter dark for cards */
+  --header-background: var(--dark-gray);
+  /* Dark header background */
+  --header-text: var(--off-white);
+  --link-color: var(--off-white);
+  --link-hover-color: var(--primary-light);
+  --border-color: var(--medium-gray);
+  /* Darker border for dark mode */
+
+  /* Update specific component colors if needed */
+  --primary: #3385FF;
+  /* Slightly adjusted primary for dark mode if needed */
+  --secondary: #8C33FF;
+  /* Slightly adjusted secondary for dark mode if needed */
+
+  /* Ensure shadows are visible on dark backgrounds or adjust them */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.25), 0 2px 4px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.25), 0 4px 6px rgba(0, 0, 0, 0.2);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.15);
+  /* Hero Section Specific - Dark Mode */
+  --hero-background-gradient: linear-gradient(135deg, var(--secondary-dark), var(--dark));
+  /* Darker gradient */
+  --hero-text-color: var(--off-white);
+  --hero-primary-btn-bg: var(--primary-light);
+  --hero-primary-btn-text: var(--dark);
+  --hero-primary-btn-hover-bg: var(--primary);
+  --hero-secondary-btn-border: var(--primary-light);
+  --hero-secondary-btn-text: var(--primary-light);
+  --hero-secondary-btn-hover-bg: rgba(var(--rgb-primary-light, 77, 148, 255), 0.15);
+  /* Use RGB for opacity if primary-light is hex */
+  --wave-divider-fill: var(--background-color);
+  /* Wave should match the next section's bg in dark mode */
+/* Features Section Specific - Dark Mode */
+--features-bg-color: var(--dark-gray); /* Darker background for features section */
+--features-section-header-text-color: var(--off-white);
+--features-section-subheader-text-color: var(--light-gray);
+--feature-card-bg-color: var(--dark); /* Even darker cards, or var(--medium-gray) for less contrast */
+--feature-card-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Adjusted shadow for dark */
+--feature-card-hover-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Adjusted hover shadow */
+--feature-icon-color: var(--primary-light); /* Brighter icon color for dark mode */
+--feature-card-title-color: var(--off-white);
+--feature-card-text-color: var(--light-gray);
+
+/* Architecture Section Specific - Dark Mode */
+--architecture-bg-color: var(--dark-gray); /* Darker section background */
+--architecture-section-header-text-color: var(--off-white);
+--architecture-section-subheader-text-color: var(--light-gray);
+--architecture-tabs-bg-color: var(--dark); /* Darker tabs area */
+--architecture-tabs-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Adjusted shadow */
+--architecture-tab-buttons-bg-color: var(--medium-gray); /* Darker button row */
+--architecture-tab-button-text-color: var(--light-gray);
+--architecture-tab-button-hover-bg-color: var(--dark-gray);
+--architecture-tab-button-active-text-color: var(--primary-light); /* Brighter active tab color */
+--architecture-tab-button-active-border-color: var(--primary-light);
+--architecture-details-title-color: var(--off-white);
+--architecture-details-text-color: var(--light-gray);
+--architecture-details-strong-text-color: var(--off-white);
+--architecture-image-bg-color: var(--medium-gray); /* Optional: if SVGs look better on a slightly different bg in dark mode */
+
+  /* Screenshots Section Specific - Dark Mode */
+  --screenshots-bg-color: var(--dark-gray); /* Darker section background */
+  --screenshots-section-header-text-color: var(--off-white);
+  --screenshots-section-subheader-text-color: var(--light-gray);
+  --screenshots-viewer-bg-color: var(--dark); /* Darker viewer background, e.g. --dark or --card-background */
+  --screenshots-viewer-shadow: 0 8px 25px rgba(0, 0, 0, 0.35); /* More pronounced shadow for dark mode */
+  --screenshots-main-border-color: var(--medium-gray);
+  --screenshots-info-title-color: var(--off-white);
+  --screenshots-info-text-color: var(--light-gray);
+  --screenshots-thumbnails-bg-color: var(--dark); /* Match viewer or slightly different, e.g. --dark-gray */
+  --screenshots-thumbnail-active-border-color: var(--primary-light);
+  --screenshots-nav-button-bg-color: rgba(45, 45, 45, 0.7); /* Darker semi-transparent nav buttons */
+  --screenshots-nav-button-text-color: var(--off-white);
+  --screenshots-nav-button-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Stronger shadow for nav buttons */
+  --screenshots-nav-button-hover-bg-color: rgba(65, 65, 65, 1);
+  --screenshots-indicators-bg-color: var(--dark); /* Match thumbnail area bg */
+  --screenshots-indicator-bg-color: var(--medium-gray);
+  --screenshots-indicator-hover-bg-color: var(--light-gray);
+  --screenshots-indicator-active-bg-color: var(--primary-light);
+
+  /* Privacy Policy Page - Dark Mode */
+  --privacy-policy-page-bg-color: var(--dark); /* Or var(--dark-gray) for a slightly off-black page */
+  --privacy-policy-base-text-color: var(--off-white);
+  --privacy-policy-section-header-title-color: var(--off-white);
+  --privacy-policy-section-header-border-color: var(--medium-gray);
+  --privacy-policy-section-title-color: var(--light-gray);
+  --privacy-policy-section-content-text-color: var(--light-gray);
+  --privacy-policy-section-link-color: var(--primary-light);
+  /* Cookie Consent Banner - Dark Mode */
+  --cookie-banner-bg-color: var(--medium-gray); /* A bit lighter than pure dark for contrast */
+  --cookie-banner-text-color: var(--off-white);
+  --cookie-banner-link-color: var(--primary-light);
+  --cookie-banner-button-bg-color: var(--primary-light);
+  --cookie-banner-button-text-color: var(--dark);
+  --cookie-banner-button-hover-bg-color: var(--primary);
+}

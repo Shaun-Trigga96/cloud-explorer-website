@@ -2,7 +2,7 @@
 
 .screenshots {
   padding: 60px 0;
-  background-color: #f0f4f8; /* Light, slightly cool background */
+  background-color: var(--screenshots-bg-color);
 }
 
 .container {
@@ -20,29 +20,30 @@
 .sectionHeader h2 {
   font-size: 2rem;
   margin-bottom: 10px;
-  color: #333;
+  color: var(--screenshots-section-header-text-color);
 }
 
 .sectionHeader p {
   font-size: 1.1rem;
-  color: #666;
+  color: var(--screenshots-section-subheader-text-color);
 }
 
 .screenshotViewer {
-  background-color: #ffffff;
+  background-color: var(--screenshots-viewer-bg-color);
   border-radius: 10px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--screenshots-viewer-shadow);
   overflow: hidden; /* Ensure rounded corners apply */
   position: relative;
 }
 
 .screenshotMain {
-  position: relative; /* Needed for absolute positioning of slides */
   text-align: center;
   padding: 30px 30px 30px 30px; /* Increased bottom padding */
-  border-bottom: 1px solid #e0e0e0; /* Separator line */
+  border-bottom: 1px solid var(--screenshots-main-border-color);
   position: relative;
   min-height: 550px; /* Give it a minimum height to contain the image+text, adjust as needed */
+  /* No background color here, as screenshotViewer has it. */
+  /* Children (.slide) will fill this space. */
 }
 
 .slide {
@@ -51,8 +52,9 @@
   left: 0;
   width: 100%;
   height: 100%;
-  padding: 30px 30px 15px 30px;
-  transition: opacity 0.5s ease;
+  padding: 30px 30px 15px 30px; /* Padding for the content within the slide */
+  box-sizing: border-box;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .activeSlide {
@@ -84,20 +86,22 @@
 .screenshotInfo {
   transition: opacity 0.3s ease;
   transition-delay: 0.2s;
+  margin-bottom: 15px; /* Ensure space below text, integrated from duplicate style */
 }
 
 .slide:not(.activeSlide) .screenshotInfo {
   opacity: 0;
 }
 
+
 .screenshotInfo h3 {
   font-size: 1.4rem;
   margin-bottom: 8px;
-  color: #333;
+  color: var(--screenshots-info-title-color);
 }
 
 .screenshotInfo p {
-  color: #555;
+  color: var(--screenshots-info-text-color);
   font-size: 1rem;
 }
 
@@ -107,7 +111,7 @@
   justify-content: center;
   padding: 20px;
   gap: 15px; /* Space between thumbnails */
-  background-color: #f8f9fa; /* Slightly different background for thumbnails */
+  background-color: var(--screenshots-thumbnails-bg-color);
 }
 
 .thumbnail {
@@ -131,7 +135,7 @@
 }
 
 .thumbnail.active {
-  border-color: #007bff; /* Highlight active thumbnail */
+  border-color: var(--screenshots-thumbnail-active-border-color);
   transform: scale(1.05);
 }
 
@@ -149,7 +153,7 @@
 }
 
 .navButton {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: var(--screenshots-nav-button-bg-color);
   border: none;
   width: 40px;
   height: 40px;
@@ -159,14 +163,14 @@
   justify-content: center;
   cursor: pointer;
   font-size: 1.2rem;
-  color: #333;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  color: var(--screenshots-nav-button-text-color);
+  box-shadow: var(--screenshots-nav-button-shadow);
   transition: all 0.3s ease;
   opacity: 0.7;
 }
 
 .navButton:hover {
-  background-color: white;
+  background-color: var(--screenshots-nav-button-hover-bg-color);
   opacity: 1;
   transform: scale(1.1);
 }
@@ -181,13 +185,13 @@
   justify-content: center;
   margin-top: -10px;
   padding-bottom: 15px;
-  background-color: #f8f9fa;
+  background-color: var(--screenshots-indicators-bg-color);
 }
 
 .indicator {
   width: 10px;
   height: 10px;
-  background-color: #ccc;
+  background-color: var(--screenshots-indicator-bg-color);
   border-radius: 50%;
   margin: 0 5px;
   cursor: pointer;
@@ -195,11 +199,11 @@
 }
 
 .indicator:hover {
-  background-color: #aaa;
+  background-color: var(--screenshots-indicator-hover-bg-color);
 }
 
 .activeIndicator {
-  background-color: #007bff;
+  background-color: var(--screenshots-indicator-active-bg-color);
   transform: scale(1.2);
 }
 
@@ -246,69 +250,4 @@
   .thumbnail {
     width: 50px;
   }
-}
-
-/* Styles for the new elements: navigation, slides, indicators */
-.navigation {
-  position: absolute;
-  top: 50%;
-  left: 10px; /* Adjust positioning */
-  right: 10px; /* Adjust positioning */
-  transform: translateY(-50%);
-  display: flex;
-  justify-content: space-between;
-  z-index: 10; /* Ensure buttons are above images */
-}
-
-.navButton {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 1.5rem;
-  line-height: 1;
-  transition: background-color 0.3s ease;
-}
-
-.navButton:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-.slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transition: opacity 0.5s ease-in-out; /* Fade transition */
-  padding: 30px; /* Match screenshotMain padding */
-  box-sizing: border-box; /* Include padding in dimensions */
-}
-
-.indicators {
-  text-align: center;
-  padding: 15px 0;
-}
-
-.indicator {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  background-color: #ccc;
-  border-radius: 50%;
-  margin: 0 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.activeIndicator {
-  background-color: #007bff;
-}
-
-/* Ensure screenshotInfo has some bottom margin */
-.screenshotInfo {
-  margin-top: 15px; /* Space between image and text */
-  margin-bottom: 15px; /* Space below text */
 }

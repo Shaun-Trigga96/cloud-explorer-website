@@ -17,6 +17,7 @@ A modern, responsive React website for the Cloud Explorer mobile application. Th
 
 ## Features
 
+- **Responsive Design:** Optimized for various screen sizes.
 - **Modern Design**: Clean, visually appealing interface with smooth animations
 - **Fully Responsive**: Optimized for all devices from mobile to desktop
 - **Component-Based Architecture**: Built with reusable React components
@@ -24,6 +25,14 @@ A modern, responsive React website for the Cloud Explorer mobile application. Th
 - **Performance Optimized**: Fast loading times and smooth transitions
 - **SEO Friendly**: Proper semantic HTML structure
 - **Easy to Customize**: Well-organized code and styling
+
+### Dark Mode Support
+
+- The website now features comprehensive dark mode support, applying themed styles to the Header, Hero section (including image swapping), Features, Architecture, Screenshots (including image swapping), Footer, and the Privacy Policy page. This is achieved using CSS variables for styling and JavaScript logic for dynamic image sources.
+
+### Cookie Consent Banner
+
+A non-intrusive cookie consent banner is implemented at the bottom of the page, appearing on the first visit. User consent is stored in local storage, and the banner respects the site's theme.
 
 ## Getting Started
 
@@ -74,7 +83,10 @@ cloud-explorer-website/
 │   │       ├── screenshot1.png
 │   │       ├── screenshot2.png # Corrected duplicate name
 │   │       └── ...
-│   ├── components/             # Reusable UI components
+│   ├── components/
+│   │   ├── CookieConsentBanner/ # New component for cookie banner
+│   │   │   ├── CookieConsentBanner.jsx
+│   │   │   └── CookieConsentBanner.module.css             
 │   │   ├── Header/
 │   │   │   ├── Header.jsx
 │   │   │   └── Header.module.css

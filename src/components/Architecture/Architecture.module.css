@@ -1,91 +1,110 @@
-/* c:\Users\thabi\Desktop\cloud-explorer-website\src\components\Architecture\Architecture.module.css */
+/* src/components/Architecture/Architecture.module.css */
 
 .architecture {
-  padding: 60px 0;
-  background-color: #ffffff; /* Or your desired background */
+  padding: 60px 0; /* Original value */
+  background-color: var(--architecture-bg-color); /* Themed */
+  transition: background-color var(--transition-normal);
 }
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 15px;
+  max-width: 1200px; /* Original value */
+  margin: 0 auto; /* Original value */
+  padding: 0 15px; /* Original value */
 }
 
 .sectionHeader {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 50px; /* Original value */
 }
 
 .sectionHeader h2 {
-  font-size: 2rem; /* Example size */
-  margin-bottom: 10px;
-  color: #333;
+  font-size: 2rem; /* Original value */
+  margin-bottom: 10px; /* Original value */
+  color: var(--architecture-section-header-text-color); /* Themed */
+  transition: color var(--transition-normal);
 }
 
 .sectionHeader p {
-  font-size: 1.1rem; /* Example size */
-  color: #666;
+  font-size: 1.1rem; /* Original value */
+  color: var(--architecture-section-subheader-text-color); /* Themed */
+  transition: color var(--transition-normal);
 }
 
 .architectureTabs {
-  background-color: #f9f9f9; /* Light background for the tab area */
-  border-radius: 8px;
-  overflow: hidden; /* Contain children */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  background-color: var(--architecture-tabs-bg-color); /* Themed */
+  border-radius: 8px; /* Original value */
+  overflow: hidden;
+  box-shadow: var(--architecture-tabs-shadow); /* Themed */
+  transition: background-color var(--transition-normal), box-shadow var(--transition-normal);
 }
 
 .tabButtons {
   display: flex;
-  background-color: #e9ecef; /* Background for the button row */
+  background-color: var(--architecture-tab-buttons-bg-color); /* Themed */
+  transition: background-color var(--transition-normal);
 }
 
 .tabButton {
   flex-grow: 1;
-  padding: 15px 20px;
+  padding: 15px 20px; /* Original value */
   border: none;
-  background-color: transparent;
+  background-color: transparent; /* Kept transparent, parent has bg */
   cursor: pointer;
-  font-size: 1rem;
-  font-weight: 500;
-  color: #666;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  border-bottom: 3px solid transparent; /* Indicator line */
+  font-size: 1rem; /* Original value */
+  font-weight: 500; /* Original value */
+  color: var(--architecture-tab-button-text-color); /* Themed */
+  transition: background-color 0.3s ease, color 0.3s ease, border-bottom-color 0.3s ease;
+  border-bottom: 3px solid transparent;
 }
 
 .tabButton:hover {
-  background-color: #dee2e6;
+  background-color: var(--architecture-tab-button-hover-bg-color); /* Themed */
+  /* Consider if text color needs to change on hover too */
 }
 
 .tabButton.active {
-  color: #007bff; /* Active tab color */
-  border-bottom-color: #007bff; /* Active indicator */
+  color: var(--architecture-tab-button-active-text-color); /* Themed */
+  border-bottom-color: var(--architecture-tab-button-active-border-color); /* Themed */
+  background-color: transparent; /* Ensure active state doesn't get hover bg if not desired */
 }
 
 .architectureContent {
-  padding: 30px;
+  padding: 30px; /* Original value */
   display: grid;
-  grid-template-columns: 1fr; /* Stack on small screens */
-  gap: 30px;
+  grid-template-columns: 1fr;
+  gap: 30px; /* Original value */
   align-items: center;
 }
 
 @media (min-width: 768px) {
   .architectureContent {
-    grid-template-columns: 1fr 1fr; /* Side-by-side on larger screens */
+    grid-template-columns: 1fr 1fr;
   }
+}
+
+.architectureImage {
+  /* If your SVGs are transparent & need a background in dark mode to be visible,
+     you can set a background color on .architectureImage based on theme */
+  /* background-color: var(--architecture-image-bg-color); */ /* Uncomment if needed */
+  /* padding: var(--space-sm); */ /* Add padding if you add a background */
+  /* border-radius: var(--border-radius-md); */ /* Add border-radius if you add a background */
 }
 
 .architectureImage img {
   max-width: 100%;
   height: auto;
-  display: block; /* Remove extra space below image */
-  border-radius: 5px;
+  display: block;
+  border-radius: 5px; /* Original value */
+  /* If SVGs use 'currentColor' for fills/strokes, their color might change with parent text color.
+     If they have hardcoded fills, they won't change unless you edit SVGs or use specific filters.
+     For now, assuming SVGs are self-contained or fine on transparent backgrounds. */
 }
 
 .architectureDetails h3 {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-  color: #333;
+  font-size: 1.5rem; /* Original value */
+  margin-bottom: 20px; /* Original value */
+  color: var(--architecture-details-title-color); /* Themed */
+  transition: color var(--transition-normal);
 }
 
 .architectureDetails ul {
@@ -95,11 +114,25 @@
 }
 
 .architectureDetails li {
-  margin-bottom: 10px;
-  color: #555;
-  line-height: 1.6;
+  margin-bottom: 10px; /* Original value */
+  color: var(--architecture-details-text-color); /* Themed */
+  line-height: 1.6; /* Original value */
+  transition: color var(--transition-normal);
 }
 
 .architectureDetails strong {
-  color: #333;
+  color: var(--architecture-details-strong-text-color); /* Themed */
+  transition: color var(--transition-normal);
 }
+
+/*
+  The .architecture.darkMode class is applied by Architecture.jsx.
+  Most dark mode styling is handled by the CSS variables.
+  Use .architecture.darkMode for specific overrides if necessary.
+  For example, if the SVG images need specific filter in dark mode:
+*/
+/*
+.architecture.darkMode .architectureImage img {
+  filter: invert(1) hue-rotate(180deg); // Example to invert colors if needed
+}
+*/

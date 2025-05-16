@@ -1,65 +1,79 @@
-/* c:\Users\thabi\Desktop\cloud-explorer-website\src\components\Features\Features.module.css */
+/* src/components/Features/Features.module.css */
 
 .features {
-  padding: 60px 0;
-  background-color: #f9f9f9; /* Light background for contrast */
+  padding: 60px 0; /* Original value */
+  background-color: var(--features-bg-color); /* Themed */
+  transition: background-color var(--transition-normal);
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 15px;
+.container { /* Assuming this is your intended container, keeping original values */
+  max-width: 1200px; /* Original value */
+  margin: 0 auto; /* Original value */
+  padding: 0 15px; /* Original value */
 }
 
 .sectionHeader {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 50px; /* Original value */
 }
 
 .sectionHeader h2 {
-  font-size: 2rem; /* Example size */
-  margin-bottom: 10px;
-  color: #333;
+  font-size: 2rem; /* Original value */
+  margin-bottom: 10px; /* Original value */
+  color: var(--features-section-header-text-color); /* Themed */
+  transition: color var(--transition-normal);
 }
 
 .sectionHeader p {
-  font-size: 1.1rem; /* Example size */
-  color: #666;
+  font-size: 1.1rem; /* Original value */
+  color: var(--features-section-subheader-text-color); /* Themed */
+  transition: color var(--transition-normal);
 }
 
 .featuresGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px; /* Original value */
 }
 
 .featureCard {
-  background-color: #ffffff;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  background-color: var(--feature-card-bg-color); /* Themed */
+  padding: 30px; /* Original value */
+  border-radius: 8px; /* Original value */
+  box-shadow: var(--feature-card-shadow); /* Themed */
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow var(--transition-normal), background-color var(--transition-normal);
 }
 
 .featureCard:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--feature-card-hover-shadow); /* Themed */
 }
 
 .featureIcon {
-  font-size: 2.5rem; /* Adjust icon size */
-  color: #007bff; /* Example icon color */
-  margin-bottom: 20px;
+  font-size: 2.5rem; /* Original value */
+  color: var(--feature-icon-color); /* Themed */
+  margin-bottom: 20px; /* Original value */
+  transition: color var(--transition-normal);
 }
 
 .featureCard h3 {
-  font-size: 1.3rem;
-  margin-bottom: 10px;
-  color: #333;
+  font-size: 1.3rem; /* Original value */
+  margin-bottom: 10px; /* Original value */
+  color: var(--feature-card-title-color); /* Themed */
+  transition: color var(--transition-normal);
 }
 
 .featureCard p {
-  color: #666;
-  line-height: 1.6;
+  color: var(--feature-card-text-color); /* Themed */
+  line-height: 1.6; /* Original value */
+  /* font-size was not specified, so it inherits - keeping it that way */
+  transition: color var(--transition-normal);
 }
+
+/*
+  The .features.darkMode class is still applied by Features.jsx.
+  However, with the color variables approach, explicit overrides here for .darkMode
+  should be minimal or unnecessary, as the variable values change automatically
+  when body.dark-mode is active.
+*/

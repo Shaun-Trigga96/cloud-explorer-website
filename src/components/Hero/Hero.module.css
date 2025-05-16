@@ -1,22 +1,23 @@
-/* c:\Users\thabi\Desktop\cloud-explorer-website\src\components\Hero\Hero.module.css */
+/* src/components/Hero/Hero.module.css */
 
 .hero {
-  background: linear-gradient(135deg, #6e8efb, #a777e3); /* Example gradient */
-  color: white;
-  padding: 100px 0 150px; /* Adjust padding, leave space for wave */
+  background: var(--hero-background-gradient); /* Use CSS variable */
+  color: var(--hero-text-color); /* Use CSS variable */
+  padding: 100px 0 150px;
   position: relative;
-  overflow: hidden; /* Hide overflowing wave */
+  overflow: hidden;
   text-align: center;
+  transition: background var(--transition-normal); /* Smooth background transition */
 }
 
 .container {
-  max-width: 1200px;
+  max-width: var(--container-max-width); /* Use variable */
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 var(--container-padding); /* Use variable */
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative; /* Ensure content is above wave */
+  position: relative;
   z-index: 2;
 }
 
@@ -30,29 +31,32 @@
 
 .heroContent {
   max-width: 600px;
-  margin-bottom: 40px;
+  margin-bottom: var(--space-xl); /* Use variable */
 }
 
 @media (min-width: 768px) {
   .heroContent {
     margin-bottom: 0;
-    margin-right: 40px; /* Space between text and image */
+    margin-right: var(--space-xl); /* Use variable */
   }
 }
 
 .heroContent h1 {
-  font-size: 2.5rem; /* Example size */
-  margin-bottom: 15px;
+  font-size: var(--font-size-3xl); /* Use variable, adjust as needed */
+  margin-bottom: var(--space-md); /* Use variable */
+  color: var(--hero-text-color); /* Ensure h1 color is also themable */
 }
 
 .heroContent p {
-  font-size: 1.1rem; /* Example size */
-  margin-bottom: 30px;
+  font-size: var(--font-size-lg); /* Use variable, adjust as needed */
+  margin-bottom: var(--space-lg); /* Use variable */
+  color: var(--hero-text-color); /* Ensure p color is also themable */
+  opacity: 0.9; /* Slight opacity for better readability on gradient */
 }
 
 .heroButtons {
   display: flex;
-  gap: 15px; /* Space between buttons */
+  gap: var(--space-sm); /* Use variable */
   justify-content: center;
 }
 
@@ -62,14 +66,14 @@
   }
 }
 
-/* Base button styles - you might move these to a shared button component later */
 .btn {
-  padding: 12px 25px;
-  border-radius: 5px;
+  padding: var(--space-sm) var(--space-md); /* Use variables */
+  border-radius: var(--border-radius-md); /* Use variable */
   text-decoration: none;
   font-weight: bold;
-  transition: transform 0.2s ease, background-color 0.2s ease;
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
   display: inline-block;
+  border: 2px solid transparent; /* Base border for consistent sizing */
 }
 
 .btn:hover {
@@ -77,40 +81,40 @@
 }
 
 .primaryBtn {
-  background-color: #ffffff;
-  color: #6e8efb; /* Match gradient start */
+  background-color: var(--hero-primary-btn-bg);
+  color: var(--hero-primary-btn-text);
 }
 
 .primaryBtn:hover {
-  background-color: #f0f0f0;
+  background-color: var(--hero-primary-btn-hover-bg);
 }
 
 .secondaryBtn {
   background-color: transparent;
-  color: #ffffff;
-  border: 2px solid #ffffff;
+  color: var(--hero-secondary-btn-text);
+  border-color: var(--hero-secondary-btn-border);
 }
 
 .secondaryBtn:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: var(--hero-secondary-btn-hover-bg);
 }
 
 .heroImage {
-  max-width: 500px; /* Adjust as needed */
-  width: 80%; /* Responsive width */
+  max-width: 500px;
+  width: 80%;
 }
 
 @media (min-width: 768px) {
   .heroImage {
-    width: auto; /* Let max-width control it */
+    width: auto;
   }
 }
 
 .heroImage img {
-  max-width: 100%;
+  max-width: 50%;
   height: auto;
-  border-radius: 8px; /* Optional: rounded corners */
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Optional: shadow */
+  border-radius: var(--border-radius-lg); /* Use variable */
+  box-shadow: var(--shadow-lg); /* Use variable */
 }
 
 .waveDivider {
@@ -120,17 +124,35 @@
   width: 100%;
   overflow: hidden;
   line-height: 0;
-  transform: rotate(180deg); /* Flip the SVG if needed */
+  transform: rotate(180deg);
   z-index: 1;
 }
 
 .waveDivider svg {
   position: relative;
   display: block;
-  width: calc(100% + 1.3px); /* SVG scaling adjustments */
-  height: 100px; /* Adjust height of the wave */
+  width: calc(100% + 1.3px);
+  height: 100px; /* Can be made a variable if needed */
 }
 
 .waveDivider path {
-  fill: #ffffff; /* Color of the section below the wave */
+  fill: var(--wave-divider-fill); /* Use CSS variable for fill */
+  transition: fill var(--transition-normal); /* Smooth fill transition */
+}
+
+/* Dark Mode Specific Styles for Hero */
+.hero.darkMode .heroContent h1,
+.hero.darkMode .heroContent p {
+  color: var(--hero-text-color); /* This is already set, but confirms it uses the dark mode var */
+}
+
+/* Button adjustments in dark mode are handled by the CSS variables
+   --hero-primary-btn-bg, --hero-primary-btn-text etc.
+   So, specific .darkMode rules for buttons might not be needed here if variables are set up correctly.
+   However, you can add them if more specific overrides are required.
+*/
+
+/* Example: If you need to ensure image shadow is adjusted for dark mode more specifically */
+.hero.darkMode .heroImage img {
+   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* Slightly different shadow for dark mode if needed */
 }

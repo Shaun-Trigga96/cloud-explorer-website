@@ -1,127 +1,169 @@
 // components/Screenshots/Screenshots.jsx
 import { useState, useEffect, useCallback } from 'react';
-// Import the screenshot images
-import dashboardImage from '../../assets/screenshots/Dashboard.png';
-import modulesImage from '../../assets/screenshots/Modules.png';
-import quizzesImage from '../../assets/screenshots/Quizzes.png';
-import examsImage from '../../assets/screenshots/Exams.png';
-import learningPathsImage from '../../assets/screenshots/LearningPaths.png';
-import currentPathImage from '../../assets/screenshots/CurrentPath.png';
-import quizProgressImage from '../../assets/screenshots/QuizProgress.png';
-import quizResultsImage from '../../assets/screenshots/QuizResults.png';
-import examStartImage from '../../assets/screenshots/ExamStart.png';
-import examProgressImage from '../../assets/screenshots/ExamProgress.png';
-import examResultsImage from '../../assets/screenshots/ExamResults.png';
-import communityPostsImage from '../../assets/screenshots/CommunityPosts.png';
-import communityUsersImage from '../../assets/screenshots/CommunityUsers.png';
-import communityEventsImage from '../../assets/screenshots/CommunityEvents.png';
-import settingsImage from '../../assets/screenshots/Settings.png';
-import profileImage from '../../assets/screenshots/Profile.png';
+// Import light mode screenshot images
+import dashboardImageLight from '../../assets/screenshots/Dashboard.png';
+import modulesImageLight from '../../assets/screenshots/Modules.png';
+import quizzesImageLight from '../../assets/screenshots/Quizzes.png';
+import examsImageLight from '../../assets/screenshots/Exams.png';
+import learningPathsImageLight from '../../assets/screenshots/LearningPaths.png';
+import currentPathImageLight from '../../assets/screenshots/CurrentPath.png';
+import quizProgressImageLight from '../../assets/screenshots/QuizProgress.png';
+import quizResultsImageLight from '../../assets/screenshots/QuizResults.png';
+import examStartImageLight from '../../assets/screenshots/ExamStart.png';
+import examProgressImageLight from '../../assets/screenshots/ExamProgress.png';
+import examResultsImageLight from '../../assets/screenshots/ExamResults.png';
+import communityPostsImageLight from '../../assets/screenshots/CommunityPosts.png';
+import communityUsersImageLight from '../../assets/screenshots/CommunityUsers.png';
+import communityEventsImageLight from '../../assets/screenshots/CommunityEvents.png';
+import settingsImageLight from '../../assets/screenshots/Settings.png';
+import profileImageLight from '../../assets/screenshots/Profile.png';
+
+// Import dark mode screenshot images
+import dashboardImageDark from '../../assets/screenshots/Dashboard-Dark.png';
+import modulesImageDark from '../../assets/screenshots/Modules-Dark.png';
+import quizzesImageDark from '../../assets/screenshots/Quizzes-Dark.png';
+import examsImageDark from '../../assets/screenshots/Exams-Dark.png';
+import learningPathsImageDark from '../../assets/screenshots/LearningPaths-Dark.png';
+import currentPathImageDark from '../../assets/screenshots/CurrentPath-Dark.png';
+import quizProgressImageDark from '../../assets/screenshots/QuizProgress-Dark.png';
+import quizResultsImageDark from '../../assets/screenshots/QuizResults-Dark.png';
+import examStartImageDark from '../../assets/screenshots/ExamStart-Dark.png';
+import examProgressImageDark from '../../assets/screenshots/ExamProgress-Dark.png';
+import examResultsImageDark from '../../assets/screenshots/ExamResults-Dark.png';
+import communityPostsImageDark from '../../assets/screenshots/CommunityPosts-Dark.png';
+import communityUsersImageDark from '../../assets/screenshots/CommunityUsers-Dark.png';
+import communityEventsImageDark from '../../assets/screenshots/CommunityEvents-Dark.png';
+import settingsImageDark from '../../assets/screenshots/Settings-Dark.png';
+import profileImageDark from '../../assets/screenshots/Profile-Dark.png';
+
 import styles from './Screenshots.module.css';
 
-function Screenshots() {
+function Screenshots({ theme }) { // Accept theme as a prop
   const [activeScreenshot, setActiveScreenshot] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [autoplay, setAutoplay] = useState(true);
 
-  const screenshots = [
+  // Original data with both light and dark image references
+  const rawScreenshotsData = [
     {
       id: 1,
-      image: dashboardImage,
+      imageLight: dashboardImageLight,
+      imageDark: dashboardImageDark,
       title: 'Dashboard View',
       description: 'Interactive dashboard showing learning progress and achievements'
     },
     {
       id: 2,
-      image: modulesImage,
+      imageLight: modulesImageLight,
+      imageDark: modulesImageDark,
       title: 'Learning Module',
       description: 'Engaging content with visual aids for better understanding'
     },
     {
       id: 3,
-      image: quizzesImage,
+      imageLight: quizzesImageLight,
+      imageDark: quizzesImageDark,
       title: 'Quiz Interface',
       description: 'Test your knowledge with interactive quizzes'
     },
     {
       id: 4,
-      image: examsImage,
+      imageLight: examsImageLight,
+      imageDark: examsImageDark,
       title: 'Exam Interface',
       description: 'Test your knowledge with comprehensive exams'
     },
     {
       id: 5,
-      image: learningPathsImage,
+      imageLight: learningPathsImageLight,
+      imageDark: learningPathsImageDark,
       title: 'Learning Paths',
       description: 'Explore curated learning paths tailored to your goals'
     },
     {
       id: 6,
-      image: currentPathImage,
+      imageLight: currentPathImageLight,
+      imageDark: currentPathImageDark,
       title: 'Current Learning Path',
       description: 'Track your progress within your active learning path'
     },
     {
       id: 7,
-      image: quizProgressImage,
+      imageLight: quizProgressImageLight,
+      imageDark: quizProgressImageDark,
       title: 'Quiz Progress',
       description: 'Monitor your quiz attempts and scores'
     },
     {
       id: 8,
-      image: quizResultsImage,
+      imageLight: quizResultsImageLight,
+      imageDark: quizResultsImageDark,
       title: 'Quiz Results',
       description: 'Review detailed feedback on your quiz performance'
     },
     {
       id: 9,
-      image: examStartImage,
+      imageLight: examStartImageLight,
+      imageDark: examStartImageDark,
       title: 'Exam Start Screen',
       description: 'Prepare to test your comprehensive knowledge'
     },
     {
       id: 10,
-      image: examProgressImage,
+      imageLight: examProgressImageLight,
+      imageDark: examProgressImageDark,
       title: 'Exam in Progress',
       description: 'Navigate through the exam questions'
     },
     {
       id: 11,
-      image: examResultsImage,
+      imageLight: examResultsImageLight,
+      imageDark: examResultsImageDark,
       title: 'Exam Results',
       description: 'View your final exam score and performance breakdown'
     },
     {
       id: 12,
-      image: communityPostsImage,
+      imageLight: communityPostsImageLight,
+      imageDark: communityPostsImageDark,
       title: 'Community Forum',
       description: 'Engage with fellow learners and share insights'
     },
     {
       id: 13,
-      image: communityUsersImage,
+      imageLight: communityUsersImageLight,
+      imageDark: communityUsersImageDark,
       title: 'Community Members',
       description: 'Connect with other users in the Cloud Explorer community'
     },
     {
       id: 14,
-      image: communityEventsImage,
+      imageLight: communityEventsImageLight,
+      imageDark: communityEventsImageDark,
       title: 'Community Events',
       description: 'Discover and participate in upcoming community events'
     },
     {
       id: 15,
-      image: settingsImage,
+      imageLight: settingsImageLight,
+      imageDark: settingsImageDark,
       title: 'Account Settings',
       description: 'Manage your account preferences and settings'
     },
     {
       id: 16,
-      image: profileImage,
+      imageLight: profileImageLight,
+      imageDark: profileImageDark,
       title: 'User Profile',
       description: 'Test your knowledge with comprehensive exams'
     }
   ];
+
+  // Derive the screenshots array with the correct image based on the current theme
+  const screenshots = rawScreenshotsData.map(s => ({
+    ...s,
+    image: theme === 'dark' ? s.imageDark : s.imageLight,
+  }));
 
   // Function to move to the next slide
   const nextSlide = useCallback(() => {
