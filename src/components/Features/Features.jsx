@@ -8,22 +8,22 @@ function Features({ theme }) { // Accept theme prop
     {
       icon: FaLightbulb,
       title: 'Interactive Learning',
-      description: 'Engaging modules that make learning GCP concepts easy and intuitive'
+      description: 'Engaging modules that make learning GCP, AWS, and Azure concepts easy and intuitive.'
     },
     {
       icon: FaQuestionCircle,
       title: 'Knowledge Testing',
-      description: 'Test your understanding with interactive quizzes at the end of each module'
+      description: 'Test your understanding with interactive quizzes for each cloud platform.'
     },
     {
       icon: FaCertificate,
       title: 'Certification Prep',
-      description: 'Prepare for GCP certifications with comprehensive practice exams'
+      description: 'Prepare for GCP, AWS, and Azure certifications with comprehensive practice exams.'
     },
     {
       icon: FaChartLine,
       title: 'Progress Tracking',
-      description: 'Track your learning journey with detailed progress analytics'
+      description: 'Track your learning journey across multiple cloud platforms with detailed progress analytics.'
     },
     {
       icon: FaRobot,
@@ -47,7 +47,7 @@ function Features({ theme }) { // Accept theme prop
       <div className={styles.container}>
         <div className={styles.sectionHeader}>
           <h2>Why Choose Cloud Explorer?</h2>
-          <p>Our app offers a comprehensive learning experience for Google Cloud Platform</p>
+          <p>Our app offers a comprehensive learning experience for Google Cloud Platform, AWS, and Azure.</p>
         </div>
         <div className={styles.featuresGrid}>
           {features.map((feature, index) => (
